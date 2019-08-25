@@ -1,11 +1,17 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-<div>
-  <img/>
-  Name, Genre,Country,Summary
-</div>
-<app-my-tvmazeshow>My show</app-my-tvmazeshow>
+  <mat-toolbar color="primary">
+    <span class="title-center">Welcome to {{ title }}!</span>
+  </mat-toolbar>
+  <div>Your TV Show Info Right Now!</div>
+  <div>
+    <!-- When user enters text in textbox / event is emitted, fire doSearch function  -->
+    <!-- Whatever searchEvent gives back is put in $event variable -->
+    <app-show-search (searchEvent)="doSearch($event)"></app-show-search>
+  </div>
+    <mat-card class="addspace">
+      <h2>My Show</h2>
+      <app-my-tvmazeshow [show]="showInfo"></app-my-tvmazeshow>
+    </mat-card>
+ 
 </div>

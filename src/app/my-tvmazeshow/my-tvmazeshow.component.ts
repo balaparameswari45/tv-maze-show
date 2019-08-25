@@ -1,6 +1,5 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { IShowInfo } from "../ishow-info";
-import { MytvshowService } from "../mytvshow/mytvshow.service";
 
 @Component({
   selector: "app-my-tvmazeshow",
@@ -8,16 +7,17 @@ import { MytvshowService } from "../mytvshow/mytvshow.service";
   styleUrls: ["./my-tvmazeshow.component.css"]
 })
 export class MyTvmazeshowComponent implements OnInit {
-  show:IShowInfo
+
+  @Input() show:IShowInfo
   //constructor() fires first - allocates memory
-  constructor(private myTvShowService: MytvshowService) {}
+  constructor() {
+    
+  }
 
   //ngOnInit() fires next after constructor()
   //initializes memory with data
   //subscribe() listens for changes
   ngOnInit() {
-    this.myTvShowService
-      .getmytvshow("SpongeBob")
-      .subscribe(data => (this.show = data));
+
   }
 }

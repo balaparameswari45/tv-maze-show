@@ -1,9 +1,7 @@
 <div>
-  
-<div>{{ show.name }}</div>
-<div>{{ show.genre }}</div>
-<div>{{ show.country }}</div>
-<div>{{ show.summary }}</div>
-<div><img [src]='show.image' /></div>
-
+  <div class="display"><span class="displayCategory">Show Title: </span>{{ show.name }}</div>
+  <div class="display" ><span class="displayCategory">Genre: </span>{{ show.genre }}</div>
+  <div class="display"><span class="displayCategory">Country of Origin: </span>{{ show.country }}</div>
+  <div class="display"><span class="displayCategory">Summary: </span>{{ show.summary }}</div>
+  <div class="display"><img [src]="show.image" /></div>
 </div>
