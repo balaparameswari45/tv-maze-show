@@ -1,10 +1,23 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { IShowInfo } from "./ishow-info";
+import { MytvshowService } from './mytvshow/mytvshow.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  title = 'tv-maze-show';
+  title = "TvMazeShow";
+
+  showInfo: IShowInfo;
+
+  constructor(private mytvshowService: MytvshowService){}
+
+  doSearch(searchValue) {
+    const userInput = searchValue.trim();
+    this.mytvshowService
+      .getmytvshow(userInput)
+      .subscribe(data => this.showInfo=data);
+  }
 }

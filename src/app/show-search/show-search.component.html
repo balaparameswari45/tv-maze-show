@@ -1,0 +1,8 @@
+<form>
+  <mat-form-field>
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput placeholder="Enter TV Show Name" aria-label="TV Show Name" [formControl]="search">
+    <mat-hint>Specific a TV Show name like "SpongeBob SquarePants"</mat-hint>
+    <mat-error *ngIf="search.invalid">Type 3 or more characters to search</mat-error>
+  </mat-form-field>
+</form>
